@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <DefaultLayout>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap gap-4">
           {list}
         </div>
       </DefaultLayout>

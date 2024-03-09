@@ -1,0 +1,61 @@
+<div className="markdown-body">
+### What is Bitcoin P2PKH address
+
+A **Bitcoin P2PKH** or **Pay-to-Public-Key-Hash** address is a type of Bitcoin address used for sending and receiving Bitcoin transactions. It's known as a legacy address format and typically starts with the number '1' as prefix.
+
+#### Key Facts:
+
+- **First Seen**: In Block 728, January 16, 2009.
+- **Example Address**: `12higDjoCCNXSA95xZMWUdPvXNmkAduhWv`
+- **Current Supply**: Secures about 43% of the mined Bitcoin supply.
+- **Popularity**: Decreasing due to newer formats like P2SH and P2WPKH.
+
+#### Technical Details:
+Creating a P2PKH address involves hashing a public key using SHA-256 and then RIPEMD-160. This process:
+- Shortens the data (saves block space and transaction fees).
+- Adds a layer of security (harder to reverse-engineer the private key).
+
+### What is Bitcoin P2SH address
+
+A **P2SH address** is a type of Bitcoin address that starts with the number **3**. It is used to send transactions to a script hash rather than a public key hash. This allows for more complex ownership conditions, such as multi-signature setups.
+
+#### How It Works:
+- Bitcoins sent to a P2SH address are locked with a script, known as the redeem script.
+- To spend the bitcoins, the recipient must provide a script that matches the hash and data which makes the script evaluate to true.
+
+#### Benefits:
+- **Flexibility**: P2SH addresses enable more complex transactions than traditional P2PKH addresses.
+- **Security**: They are often used for multi-signature transactions, which require multiple parties to sign off on a transaction.
+- **Compatibility**: P2SH addresses can send funds to both P2PKH and bech32 addresses.
+
+#### Example:
+A typical P2SH address looks like this:
+`3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy`
+
+P2SH addresses were standardized in BIP 16 and have become a fundamental part of Bitcoin's scripting capabilities.
+
+### What is Bitcoin P2WSH (Pay-to-Witness-Script-Hash) Addresses
+
+P2WSH addresses are part of the Segregated Witness (SegWit) upgrade in Bitcoin and allow for more complex scripts to be used for transactions. They are known for their efficiency and flexibility.
+
+#### Key Features
+- **Efficiency:** Smaller transaction sizes lead to lower fees.
+- **Flexibility:** Supports complex scripts for transactions.
+- **Error Detection:** Bech32 encoding with error detection.
+
+#### Address Format
+- Starts with `bc1` for the Bitcoin mainnet.
+- Uses bech32 encoding, which is case-insensitive and includes a checksum.
+
+### What is Bitcoin P2SH-P2WSH address
+
+An format combine P2SH and P2WSH address.
+
+#### Benefits:
+
+- **Lower Transaction Fees**: Transactions using P2WSH are discounted for the witness data, leading to lower fees.
+- **Complex Script Support**: P2SH-P2WSH enables the use of more complex scripts than standard P2PKH addresses.
+- **Improved Efficiency**: As part of SegWit, P2WSH addresses contribute to a more efficient use of block weight.
+- **Error Detection**: The Bech32 addresses used in P2WSH include a checksum for error detection and correction.
+
+</div>

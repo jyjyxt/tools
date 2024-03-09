@@ -23,6 +23,10 @@
   list-style: auto;
 }
 
+.markdown-body ul{
+  list-style: auto;
+}
+
 .markdown-body h1:hover .anchor .octicon-link:before,
 .markdown-body h2:hover .anchor .octicon-link:before,
 .markdown-body h3:hover .anchor .octicon-link:before,
@@ -296,7 +300,7 @@
 }
 
 .markdown-body h4 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1em;
 }
 
