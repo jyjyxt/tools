@@ -4,7 +4,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import About from './about.mdx'
 
-const Page = () => {
+const Page = ({title} : {title: string | undefined}) => {
   const re = useMemo(() => /[\n,，]/, [])
 
   const [urls, setUrls] = useState('');
@@ -50,7 +50,7 @@ const Page = () => {
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mb-6">
         <div className="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
           <h1 className="font-medium text-black dark:text-white">
-            Open Multiple URLs at Once
+            {title}
           </h1>
         </div>
         <div className="p-6.5">
