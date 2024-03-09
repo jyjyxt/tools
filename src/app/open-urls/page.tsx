@@ -63,9 +63,14 @@ const Page = () => {
               onChange={e => setUrls(e.target.value)}
             />
           </div>
-          <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90" onClick={handleClick}>
-            Open URLs
-          </button>
+          <div className="flex">
+            <button className="flex-1 rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90" onClick={handleClick}>
+              Open URLs
+            </button>
+            <button className="ml-8 flex-2 rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90" onClick={() => { setUrls('') }}>
+              Clear TextArea
+            </button>
+          </div>
         </div>
       </div>
 
