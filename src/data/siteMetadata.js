@@ -1,5 +1,6 @@
 const siteMetadata = {
-  title: 'Crypto Tools Aggregator',
+  name: 'GMGN Tools',
+  title: 'Online Tools Aggregator',
   author: 'A Trader',
 }
 

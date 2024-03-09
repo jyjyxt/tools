@@ -1,10 +1,10 @@
 import ECommerce from "@/components/Dashboard/E-commerce";
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import site from "@/data/siteMetadata"
 
 export const metadata: Metadata = {
-  title:
-    "Next.js E-commerce Dashboard | TailAdmin - Next.js Dashboard Template",
+  title: `${site.title} | ${site.name}`,
   description: "This is Next.js Home for TailAdmin Dashboard Template",
 };
 

@@ -8,7 +8,7 @@ const tool = tools.find((t) => {
 })
 
 export const metadata: Metadata = {
-  title: `${tool?.title} | ${site.title}`,
+  title: `${tool?.title} | ${site.name}`,
   description: tool?.desc
 };
 
