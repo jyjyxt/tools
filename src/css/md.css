@@ -1,6 +1,6 @@
 .dark .markdown-body {
   color: white;
-  background-color: #000;
+  background-color: rgb(36 48 63 / var(--tw-bg-opacity));
 }
 
 .markdown-body {
