@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <DefaultLayout>
-        <ECommerce />
+        <div>Tools</div>
       </DefaultLayout>
     </>
   );
