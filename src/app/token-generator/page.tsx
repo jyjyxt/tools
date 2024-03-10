@@ -4,7 +4,7 @@ import tools from "@/data/tools"
 import Client from "./client"
 
 const tool = tools.find((t) => {
-  return t.link === '/bitcoin-p2pkh'
+  return t.link === '/token-generator'
 })
 
 export const metadata: Metadata = {

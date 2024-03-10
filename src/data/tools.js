@@ -1,5 +1,11 @@
 const data = [
   {
+    title: 'Random String Generator Online',
+    link: '/token-generator',
+    short: '🧵 Token Generator',
+    desc: 'Generate random string with the chars you want, uppercase or lowercase letters, numbers and/or symbols.',
+  },
+  {
     title: 'Convert Bitcoin P2PKH to P2WPKH, P2WSH, or P2SH-P2WSH Address Online',
     link: '/bitcoin-p2pkh',
     short: '₿ Bitcoin P2PKH',
