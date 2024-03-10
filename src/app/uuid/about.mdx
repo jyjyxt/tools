@@ -1,0 +1,80 @@
+<div className="markdown-body">
+### What is NIL UUID 
+
+A nil UUID is a UUID that has all 128 bits set to zero. It's represented as:
+
+`00000000-0000-0000-0000-000000000000`
+
+
+#### Usage
+
+- Initialization: When you need to initialize a UUID variable but don't have a value yet.
+- Placeholder: As a placeholder when a UUID is optional or not applicable.
+- Error Handling: To indicate the absence of a value in error scenarios.
+
+### What is UUID V1
+
+UUID v1 generates unique identifiers using the host computer's MAC address and the current timestamp, ensuring that each UUID is unique.
+
+#### Structure
+
+A UUID v1 is displayed as 32 hexadecimal digits, split into five groups, like this:
+
+`bef45a40-d8b1-11ee-ad50-4bc2c7961874`
+
+#### How It Works
+
+- **Timestamp**: The current date and time provide the first part of the UUID, ensuring temporal uniqueness.
+- **MAC Address**: The host computer's MAC address is used as a spatially unique identifier.
+- **Random Component**: A random element is added to further ensure uniqueness.
+
+### What is UUID V3
+
+UUID v3 creates unique identifiers by hashing a namespace identifier and a name using the MD5 hashing algorithm.
+
+#### Structure
+
+A UUID v3 looks like this:
+
+`6222b113-5f4f-34ad-99cd-2e42c0cc0e72`
+
+#### How It Works
+
+- **Namespace Identifier**: A predefined UUID that represents a certain domain or namespace.
+- **Name**: A string within the specified namespace.
+
+The combination of these two is hashed using MD5 to produce a UUID v3.
+
+### What is UUID V4
+
+UUID v4 is a universally unique identifier that is generated using random numbers.
+
+#### Structure
+
+A UUID v4 is displayed as 32 hexadecimal digits, split into five groups, like this:
+
+`e81a5ce9-781c-46ab-993d-adc57c76a8b9`
+
+#### How It Works
+
+- **Randomness**: All the bits in a UUID v4 are generated randomly, providing a high degree of uniqueness.
+- **No Inherent Logic**: Unlike other UUID versions, v4 doesn't use time stamps or hardware addresses to generate the ID.
+
+### What is UUID V5
+
+UUID v5 creates unique identifiers by hashing a namespace identifier and a name using the SHA-1 hashing algorithm.
+
+#### Structure
+
+A UUID v5 is displayed as 32 hexadecimal digits, split into five groups, like this:
+
+`74738ff5-5367-5958-9aee-98fffdcd1876`
+
+#### How It Works
+
+- **Namespace Identifier**: A predefined UUID that represents a certain domain or namespace.
+- **Name**: A string within the specified namespace.
+
+The combination of these two is hashed using SHA-1 to produce a UUID v5.
+
+</div>
