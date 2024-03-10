@@ -1,0 +1,47 @@
+<div className="markdown-body">
+### What is Ethereum Private Key
+
+- A private key in Ethereum is a secret number that allows user to access their funds. It is used to sign transactions and messages, which proves the ownership of the address.
+- **Generation**: Ethereum private key is generated using elliptic-curve cryptography, specifically the secp256k1 curve.
+- **Security**: The private key must remain confidential because anyone with access to it can control the funds.
+- **Public Key Derivation**: From the private key, a public key is derived, which in turn is used to generate an Ethereum address.
+- **Usage**: When you initiate a transaction, you sign it with your private key. This signature is used to verify that the transaction comes from the rightful owner.
+- **Storage**: It's need to store your private key securely, as losing it means losing access to your assets.
+
+### What is Ethereum Uncompressed Public Key
+
+- **Definition**: An uncompressed public key in Ethereum is derived from a private key using the secp256k1 elliptic curve. It includes both the `x` and `y` coordinates of a point on the curve, representing the public key.
+- **Format**: The uncompressed public key starts with the prefix `04`, followed by the `x` coordinate and then the `y` coordinate. Each coordinate is 32 bytes long, making the total length of an uncompressed public key 65 bytes (including the prefix).
+- **Usage**: Uncompressed public keys were commonly used in earlier wallet software. However, they are larger in size compared to compressed public keys, which only include the `x` coordinate and a prefix to indicate the `y` coordinate.
+- **Example**:
+  - Prefix: `04`
+  - X Coordinate: `x-coordinate-here`
+  - Y Coordinate: `y-coordinate-here`
+  - Full Key: `04|x-coordinate-here|y-coordinate-here`
+- **Compression**: To reduce the size, a public key can be compressed, removing the `y` coordinate. The compressed format starts with either `02` or `03`, depending on whether the `y` coordinate is even or odd, respectively.
+- **Relevance**: While uncompressed keys are still supported for backward compatibility, most modern Ethereum applications use compressed keys due to their smaller size and efficiency.
+
+### What is Ethereum Compressed Public Key
+
+- **Definition**: An uncompressed public key in Ethereum is derived from a private key using the secp256k1 elliptic curve. It includes both the `x` and `y` coordinates of a point on the curve, representing the public key.
+- **Format**: The uncompressed public key starts with the prefix `04`, followed by the `x` coordinate and then the `y` coordinate. Each coordinate is 32 bytes long, making the total length of an uncompressed public key 65 bytes (including the prefix).
+- **Usage**: Uncompressed public keys were commonly used in earlier wallet software. However, they are larger in size compared to compressed public keys, which only include the `x` coordinate and a prefix to indicate the `y` coordinate.
+- **Example**:
+  - Prefix: `04`
+  - X Coordinate: `x-coordinate-here`
+  - Y Coordinate: `y-coordinate-here`
+  - Full Key: `04|x-coordinate-here|y-coordinate-here`
+- **Compression**: To reduce the size, a public key can be compressed, removing the `y` coordinate. The compressed format starts with either `02` or `03`, depending on whether the `y` coordinate is even or odd, respectively.
+- **Relevance**: While uncompressed keys are still supported for backward compatibility, most modern Ethereum applications use compressed keys due to their smaller size and efficiency.
+
+### What is Ethereum address
+- **Definition**: An Ethereum address is a unique identifier that allows users to send, receive, and store Ether (ETH) and other tokens on the Ethereum network. It also serves as the interaction point for smart contracts.
+- **Structure**: An Ethereum address is a 42-character hexadecimal string that starts with '0x'. It is derived from the public key of an Ethereum account and is used to direct transactions.
+- **Checksum**: To prevent errors in address input, Ethereum uses a checksum mechanism where the case of the hexadecimal characters encodes redundancy checks. This is specified in [EIP-55](https://medium.com/coinmonks/ethereum-checksummed-addresses-importance-and-implementation-eef74aa3ae18).
+- **Example**:
+  - Non-checksummed: `0x6827b8f6cc60497d9bf5210d602c0ecafdf7c405`
+  - Checksummed: `0x6827b8F6Cc60497D9bF5210D602c0EcaFDF7C405`
+- **Usage**: Users must provide their Ethereum address to receive funds or interact with decentralized applications (DApps). It is also used to view account balances and transaction history.
+- **Security**: It is crucial to keep your Ethereum address secure and private, as it is linked to your assets on the blockchain.
+- **Best Practices**: Always double-check addresses before sending transactions, use checksummed addresses to avoid errors, and consider using ENS (Ethereum Name Service) for a more human-readable address format.
+</div>
