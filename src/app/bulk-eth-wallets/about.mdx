@@ -1,0 +1,118 @@
+<div className="markdown-body">
+### What is Ethereum Address
+
+An Ethereum address is a 42-character string that starts with '0x'. Here's how it's generated:
+
+1. **Generate a private key**: A random 256-bit number.
+2. **Derive the public key**: Use the private key to generate a 512-bit public key.
+3. **Derive the Ethereum address**: Take the Keccak-256 hash of the public key, then take the last 40 characters and prepend '0x'.
+
+#### Checksummed Address
+
+Ethereum addresses can be checksummed to prevent errors. This involves capitalizing certain letters in the address based on the hash of the address itself.
+
+#### Example
+
+- Non-checksummed: `0xabcdef1234567890abcdef1234567890abcdef12`
+- Checksummed: `0xABcdEF1234567890aBCDef1234567890AbCdEf12`
+
+Checksumm helps to verify that the address is correct and prevents sending funds to an incorrect address.
+
+### What is Ethereum Private Key
+
+#### Definition
+A **private key** in Ethereum is a 256-bit long number, which is essentially a randomly generated secret. It's the cornerstone of Ethereum's security and is used to sign transactions, proving ownership of funds.
+
+#### Characteristics
+- **Unique**: Each private key is unique and should not be shared.
+- **Secure**: Must be kept secret to prevent unauthorized access to funds.
+- **Random**: Generated with a high degree of randomness to ensure security.
+
+#### Generation
+Private keys are generated using elliptic-curve cryptography (ECC), specifically the `secp256k1` curve used by Ethereum.
+
+#### Usage
+- **Signing Transactions**: The private key signs transactions, which are then verified by the corresponding public key.
+- **Access Control**: The holder of the private key has full control over their Ethereum assets.
+
+#### Storage
+- **Cold Storage**: Storing the private key offline, such as on a hardware wallet, for enhanced security.
+- **Encrypted Storage**: Using secure software wallets that encrypt the private key.
+
+#### Example
+A private key might look like this (do not use this example as your key):
+`0x4c0883fa340f432c937c1a9d9e345f5b6b3fa069c8ec6e8c32e3fa8c743c9a02`
+
+#### Warning
+Never disclose your private key. If someone obtains it, they can steal your Ethereum tokens.
+
+### What is Mnemonic
+
+#### Definition
+A **mnemonic phrase**, also known as a **seed phrase** or **recovery phrase**, is a list of words used to access and recover blockchain wallets.
+
+#### Purpose
+- **Backup**: Acts as a backup to restore wallet access.
+- **Simplicity**: Easier to remember and record than a long string of random characters.
+
+#### Generation
+- Generated according to a standard like **BIP39** from a random seed.
+- Typically consists of 12, 18, or 24 words.
+
+#### Security
+- **Confidential**: Should be kept secret and secure.
+- **Single Point of Failure**: If someone discovers your mnemonic, they can access your funds.
+
+#### Example
+A mnemonic might look like this:
+`witch collapse practice feed shame open despair creek road again ice least`
+
+#### Usage
+- Enter the mnemonic into a compatible wallet software to restore access to the funds.
+
+### What is bip39 wordlists
+
+BIP39 wordlists consist of 2048 words used to create mnemonic phrases for backing up cryptocurrency wallets.
+
+#### Purpose
+- **Mnemonic Generation**: To generate easy-to-remember phrases that represent wallet seeds.
+- **Recovery**: To recover wallet access without the need for complex private keys.
+
+#### Features
+- **Standardized Lists**: There are several language-specific lists, including English, Spanish, Chinese, and more.
+- **Unique Identifiers**: Each word in the list is unique, often with the first four letters being enough to identify it.
+
+#### Process
+1. A random seed is generated.
+2. The seed is divided into sections.
+3. Each section corresponds to a word in the BIP39 wordlist.
+4. The words form a mnemonic phrase.
+
+#### Security
+- **Checksum**: Includes a checksum for error-checking and verification.
+- **Randomness**: The high degree of randomness makes it secure.
+
+### Differences between words size, e.g.: 12 words and 24 words.
+
+#### 12-Word Phrase
+- **128 bits of entropy** (plus a 4-bit checksum).
+- Security level: **2^128** possible combinations.
+- Considered secure for most practical purposes today.
+
+#### 24-Word Phrase
+- **256 bits of entropy** (plus a 4-bit checksum).
+- Security level: **2^256** possible combinations.
+- Provides a higher security level, potentially safeguarding against future advances in computing.
+
+#### Security Implications
+- A 12-word phrase is generally sufficient for current security standards.
+- A 24-word phrase offers additional security, which may be more resistant to future technological advancements.
+
+#### Example
+- 12 words: `army van defense carry jealous true garbage claim echo media make crunch`
+- 24 words: `army van defense carry jealous true garbage claim echo media make crunch army van defense carry jealous true garbage claim echo media make crunch`
+
+#### Conclusion
+While a 12-word mnemonic is secure under today's standards, a 24-word mnemonic provides an extra layer of security for long-term protection and peace of mind.
+
+</div>

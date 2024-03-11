@@ -1,5 +1,12 @@
 const data = [
   {
+    title: 'Ethereum Batch Wallets Generate Online',
+    link: '/bulk-eth-wallets',
+
+    short: '🦍 ETH Batch Wallets',
+    desc: 'Free & Open Source generate ETH and BSC wallets Online',
+  },
+  {
     title: 'Convert ETH Private Key To Public Key, or Address Online',
     link: '/eth-priv',
 

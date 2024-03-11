@@ -43,7 +43,6 @@ const Page = ({title} : {title: string | undefined}) => {
   }, [nl, v1, v3, v4, v5, sl])
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target)
     setNL(false)
     setV1(false)
     setV3(false)
@@ -115,11 +114,11 @@ const Page = ({title} : {title: string | undefined}) => {
             </div>
           </div>
           <div className="mb-6">
-            <label className="mb-3 block text-sm font-medium text-black dark:text-white">Random String Generator Result</label>
+            <label className="mb-3 block text-sm font-medium text-black dark:text-white">Bulk UUID Generator Result</label>
             <div className="relative">
             <textarea
               rows={8}
-              placeholder="Random String Generator Result."
+              placeholder="Bulk UUID Generator Result"
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               value={result}
               disabled readOnly
