@@ -90,7 +90,7 @@ const Page = ({title} : {title: string | undefined}) => {
         <div className="p-6.5">
           <div className="mb-6">
             <textarea
-              rows={3}
+              rows={2}
               placeholder="Paste/Enter Bitcoin P2PKH here."
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               value={dd}
