@@ -20,27 +20,22 @@ const Page = ({title} : {title: string | undefined}) => {
   useEffect(() => {
     if (isValid(+dd)) {
       const da = fromUnixTime(+dd);
-      const iso = formatISO(da)
-      const ISO9075 = formatISO(da)
-      const RFC3339 = formatRFC3339(da)
-      const RFC7231 = formatRFC7231(da)
-      const today = isToday(da)
       setFMTs([
         {
           label: "ISO 8601",
-          value: iso,
+          value: formatISO(da),
         },
         {
           label: "ISO 9075",
-          value: ISO9075,
+          value: formatISO9075(da),
         },
         {
           label: "RFC 3339",
-          value: RFC3339,
+          value: formatRFC3339(da),
         },
         {
           label: "RFC 7231",
-          value: RFC7231,
+          value: formatRFC7231(da),
         },
         {
           label: "UTC Time",
@@ -48,7 +43,7 @@ const Page = ({title} : {title: string | undefined}) => {
         },
         {
           label: "is Today",
-          value: today,
+          value: isToday(da),
         },
       ])
     }
