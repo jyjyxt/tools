@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { isValid, fromUnixTime, getUnixTime, formatISO, formatISO9075, isToday } from "date-fns";
-import * as btc from '@scure/btc-signer';
+import { isValid, fromUnixTime, getUnixTime, formatISO, formatISO9075, formatRFC3339, formatRFC7231, isToday } from "date-fns";
 import { useCopyToClipboard } from 'usehooks-ts'
 import { toast } from 'react-toastify';
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
@@ -16,16 +15,15 @@ interface Fmt {
 const Page = ({title} : {title: string | undefined}) => {
   const [dd, setDD] = useState<string | number>(getUnixTime(new Date()));
   const [fmts, setFMTs] = useState<Fmt[]>([]);
-  const [p2sh, setP2SH] = useState ('');
-  const [p2wsh, setP2WSH] = useState ('');
-  const [p2shp2wsh, setP2SHP2WSH] = useState ('');
   const [, copy] = useCopyToClipboard()
 
   useEffect(() => {
-    if (isValid(dd)) {
-      const da = fromUnixTime(dd as number);
+    if (isValid(+dd)) {
+      const da = fromUnixTime(+dd);
       const iso = formatISO(da)
       const ISO9075 = formatISO(da)
+      const RFC3339 = formatRFC3339(da)
+      const RFC7231 = formatRFC7231(da)
       const today = isToday(da)
       setFMTs([
         {
@@ -35,6 +33,18 @@ const Page = ({title} : {title: string | undefined}) => {
         {
           label: "ISO 9075",
           value: ISO9075,
+        },
+        {
+          label: "RFC 3339",
+          value: RFC3339,
+        },
+        {
+          label: "RFC 7231",
+          value: RFC7231,
+        },
+        {
+          label: "UTC Time",
+          value: da.toUTCString(),
         },
         {
           label: "is Today",
@@ -58,8 +68,8 @@ const Page = ({title} : {title: string | undefined}) => {
       <div className="mb-6" key={fmt.label}>
         <label className="mb-3 block text-sm font-medium text-black dark:text-white">{fmt.label}</label>
         <div className="relative">
-          <input id="npm-install-copy-text" type="text" className="col-span-6 bg-gray-50 border-[1.5px] border-stroke text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-form-input dark:border-form-strokedark dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value={fmt.value} placeholder="Bitcoin P2SH Address" disabled readOnly />
-          <button data-copy-to-clipboard-target="npm-install-copy-text" className="absolute end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-white/30 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-primary border" onClick={() => handleCopy(fmt.value)}>
+          <input id="npm-install-copy-text" type="text" className="col-span-6 bg-gray-50 border-[1.5px] border-stroke text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-form-input dark:border-form-strokedark dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value={fmt.value as string} placeholder="Bitcoin P2SH Address" disabled readOnly />
+          <button data-copy-to-clipboard-target="npm-install-copy-text" className="absolute end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-white/30 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-primary border" onClick={() => handleCopy(fmt.value as string)}>
             <span id="default-message" className="inline-flex items-center">
               <span className="text-xs font-semibold">Copy</span>
             </span>
