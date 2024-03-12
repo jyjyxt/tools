@@ -12,40 +12,45 @@ interface Fmt {
   value: string | boolean;
 }
 
+const fmt = (da: Date) => {
+  return [
+    {
+      label: "ISO 8601",
+      value: formatISO(da),
+    },
+    {
+      label: "ISO 9075",
+      value: formatISO9075(da),
+    },
+    {
+      label: "RFC 3339",
+      value: formatRFC3339(da),
+    },
+    {
+      label: "RFC 7231",
+      value: formatRFC7231(da),
+    },
+    {
+      label: "UTC Time",
+      value: da.toUTCString(),
+    },
+    {
+      label: "is Today",
+      value: isToday(da),
+    },
+  ]
+}
+
 const Page = ({title} : {title: string | undefined}) => {
-  const [dd, setDD] = useState<string | number>(getUnixTime(new Date()));
-  const [fmts, setFMTs] = useState<Fmt[]>([]);
+  const dt = new Date();
+  const [dd, setDD] = useState<string | number>(getUnixTime(dt));
+  const [fmts, setFMTs] = useState<Fmt[]>(fmt(dt));
   const [, copy] = useCopyToClipboard()
 
   useEffect(() => {
     if (isValid(+dd)) {
       const da = fromUnixTime(+dd);
-      setFMTs([
-        {
-          label: "ISO 8601",
-          value: formatISO(da),
-        },
-        {
-          label: "ISO 9075",
-          value: formatISO9075(da),
-        },
-        {
-          label: "RFC 3339",
-          value: formatRFC3339(da),
-        },
-        {
-          label: "RFC 7231",
-          value: formatRFC7231(da),
-        },
-        {
-          label: "UTC Time",
-          value: da.toUTCString(),
-        },
-        {
-          label: "is Today",
-          value: isToday(da),
-        },
-      ])
+      setFMTs(fmt(da))
     }
   }, [dd]) 
 
