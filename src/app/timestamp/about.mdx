@@ -1,2 +1,112 @@
 <div className="markdown-body">
+## What is ISO 8601 timestamp
+
+The ISO 8601 standard specifies a format for representing dates and times that is:
+
+- **Unambiguous**: Clearly defines the order of date and time elements.
+- **Internationally Understood**: Can be used globally without confusion.
+- **Machine Readable**: Easily processed by computers.
+
+### Format Specification
+
+- **Date**: `YYYY-MM-DD` (e.g., `2024-03-09`)
+- **Time**: `hh:mm:ss` (e.g., `14:30:00`)
+- **Combined Date and Time**: `YYYY-MM-DDThh:mm:ss` (e.g., `2024-03-09T14:30:00`)
+- **Time Zone Designation**: Either `Z` for UTC or a `±hh:mm` offset (e.g., `2024-03-09T14:30:00+11:00`)
+
+### Usage Examples
+
+- **Current Date and Time in UTC**: `2024-03-09T01:21:12Z`
+- **Date and Time with Offset**: `2024-03-09T14:30:00+11:00`
+
+The `T` separates the date from the time, and `Z` indicates Coordinated Universal Time (UTC). When a local time is used, the offset from UTC is appended at the end.
+
+## What is ISO 9075 timestamp
+
+The ISO 8601 standard specifies a format for representing dates and times that is:
+
+- **Unambiguous**: Clearly defines the order of date and time elements.
+- **Internationally Understood**: Can be used globally without confusion.
+- **Machine Readable**: Easily processed by computers.
+
+### Format Specification
+
+- **Date**: `YYYY-MM-DD` (e.g., `2024-03-09`)
+- **Time**: `hh:mm:ss` (e.g., `14:30:00`)
+- **Combined Date and Time**: `YYYY-MM-DDThh:mm:ss` (e.g., `2024-03-09T14:30:00`)
+- **Time Zone Designation**: Either `Z` for UTC or a `±hh:mm` offset (e.g., `2024-03-09T14:30:00+11:00`)
+
+### Usage Examples
+
+- **Current Date and Time in UTC**: `2024-03-09T01:21:12Z`
+- **Date and Time with Offset**: `2024-03-09T14:30:00+11:00`
+
+The `T` separates the date from the time, and `Z` indicates Coordinated Universal Time (UTC). When a local time is used, the offset from UTC is appended at the end
+
+## What is RFC 3339 timestamp
+
+RFC 3339 provides a timestamp format for Internet protocols by defining a date and time representation that is:
+
+- **Unambiguous**: Clearly defines the order of date and time elements.
+- **Internationally Understood**: Can be used globally without confusion.
+- **Machine Readable**: Easily processed by computers.
+
+### Format Specification
+
+- **Date**: `YYYY-MM-DD` (e.g., `2024-03-09`)
+- **Time**: `hh:mm:ss` (e.g., `21:09:19`)
+- **Combined Date and Time**: `YYYY-MM-DDThh:mm:ss` (e.g., `2024-03-09T21:09:19`)
+- **Time Zone Designation**: Either `Z` for UTC or a `±hh:mm` offset (e.g., `2024-03-09T21:09:19+11:00`)
+
+### Usage Examples
+
+- **Current Date and Time in UTC**: `2024-03-09T12:09:19Z`
+- **Date and Time with Offset**: `2024-03-09T21:09:19+11:00`
+
+The `T` separates the date from the time, and `Z` indicates Coordinated Universal Time (UTC). When a local time is used, the offset from UTC is appended at the end.
+
+## What is RFC 7231 timestamp
+
+RFC 7231 specifies the format for date and time in HTTP headers, which is essential for representing the creation and modification times of HTTP messages.
+
+### Format Specification
+
+- **HTTP-date Format**: Defined as the `orig-date` in RFC 7231, which refers to RFC 5322 for the actual format.
+- **Preferred Format**: The preferred format is `IMF-fixdate`, which is a fixed-length subset of the date and time specification from RFC 5322.
+
+### Example of IMF-fixdate
+
+Mon, 09 Mar 2024 21:09:19 GMT
+
+- The format is: `day-name, DD MMM YYYY hh:mm:ss GMT`
+- It includes the day of the week, the date, the month, the year, the time in 24-hour format, and the timezone (always GMT).
+
+RFC 7231 uses this timestamp format to ensure consistency and reliability in the communication of date and time information over HTTP[^1^][1].
+
+## What is UTC timestamp
+
+UTC is the time standard used to synchronize clocks around the world. It is based on International Atomic Time (TAI), with leap seconds added at irregular intervals to compensate for Earth's slowing rotation.
+
+### Characteristics of UTC
+- **Universal**: It is the time standard used worldwide.
+- **Atomic Time**: Based on the output of atomic clocks.
+- **Leap Seconds**: Used to keep UTC within 0.9 seconds of Universal Time (UT1), which is based on the Earth's rotation.
+
+### UTC Timestamp Format
+A UTC timestamp is formatted as `YYYY-MM-DDThh:mm:ssZ` where:
+- `YYYY` is the four-digit year.
+- `MM` is the two-digit month.
+- `DD` is the two-digit day.
+- `T` is a delimiter that separates the date from the time.
+- `hh:mm:ss` is the time in hours, minutes, and seconds.
+- `Z` indicates that the time is in UTC.
+
+### Example
+
+2024-03-09T21:09:19Z
+
+This represents the 9th of March, 2024 at 21 hours, 9 minutes, and 19 seconds in UTC.
+
+UTC does not observe daylight saving time and is used as the basis for time zones around the world, which are
+
 </div>
