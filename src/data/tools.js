@@ -1,5 +1,12 @@
 const data = [
   {
+    title: 'Converter Number to Binary, Octal, Decimal, Hexadecimal Online',
+    link: '/integer',
+
+    short: '🔢 integer',
+    desc: 'Free & Open Source number converter, Converter Number to Binary, Octal, Decimal, Hexadecimal Online.',
+  },
+  {
     title: 'Unix Timestamp Converter Online',
     link: '/timestamp',
 
