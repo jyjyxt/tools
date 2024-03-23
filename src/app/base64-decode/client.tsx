@@ -13,6 +13,7 @@ const Page = ({title} : {title: string | undefined}) => {
   const [, copy] = useCopyToClipboard()
   const [urlSafe, setUrlSafe] = useState(false);
   const [noPadding, setNoPadding] = useState(false);
+  const [bytes, setBytes] = useState(false);
 
   const handleOriginalChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -28,18 +29,25 @@ const Page = ({title} : {title: string | undefined}) => {
     if (original.length === 0) {
       return
     }
-    const d = new TextEncoder().encode(original);
 
-    if (!urlSafe && !noPadding) {
-      setBase(base64.encode(d))
-    } else if (urlSafe && noPadding) {
-      setBase(base64urlnopad.encode(d))
-    } else if (urlSafe) {
-      setBase(base64url.encode(d))
-    } else {
-      setBase(base64nopad.encode(d))
-    }
-  }, [original, urlSafe, noPadding]) 
+    try {
+      let b;
+      if (!urlSafe && !noPadding) {
+        b = base64.decode(original)
+      } else if (urlSafe && noPadding) {
+        b = base64urlnopad.decode(original)
+      } else if (urlSafe) {
+        b = base64url.decode(original)
+      } else {
+        b = base64nopad.decode(original)
+      }
+      if (bytes) {
+        setBase(b.join(', '))
+        return
+      }
+      setBase(new TextDecoder().decode(b))
+    } catch {}
+  }, [original, urlSafe, noPadding, bytes]) 
 
   const notify = (str: string) => toast(`Copied ${str}!`);
 
@@ -63,7 +71,7 @@ const Page = ({title} : {title: string | undefined}) => {
             <textarea
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               value={original}
-              placeholder="Enter your Base64 encode text here."
+              placeholder="Enter your Base64 decode text here."
               rows={6}
               onChange={handleOriginalChange}
             ></textarea>
@@ -75,7 +83,7 @@ const Page = ({title} : {title: string | undefined}) => {
                 <input
                   type="checkbox"
                   id='url-safe'
-                  className="h-4 w-4 border-gray-300 rounded mr-1"
+                  className="h-4 w-4 border-gray-300 rounded"
                   checked={urlSafe}
                   onChange={() => setUrlSafe(!urlSafe)}
                 />
@@ -85,11 +93,21 @@ const Page = ({title} : {title: string | undefined}) => {
                 <input
                   type="checkbox"
                   id='no-padding'
-                  className="h-4 w-4 border-gray-300 rounded mr-1"
+                  className="h-4 w-4 border-gray-300 rounded"
                   checked={noPadding}
                   onChange={() => setNoPadding(!noPadding)}
                 />
                 <label htmlFor='no-padding' className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">No Padding</label>
+              </div>
+              <div className="mr-4 flex items-center">
+                <input
+                  type="checkbox"
+                  id='bytes'
+                  className="h-4 w-4 border-gray-300 rounded"
+                  checked={bytes}
+                  onChange={() => setBytes(!bytes)}
+                />
+                <label htmlFor='bytes' className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bytes</label>
               </div>
               <button
                 className="rounded bg-primary py-2 px-10 font-medium text-gray hover:bg-opacity-90"
@@ -107,11 +125,11 @@ const Page = ({title} : {title: string | undefined}) => {
           </div>
           <div className="mb-4">
             <textarea
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-6 focus:outline-none focus:shadow-outline"
+              className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               placeholder="Encoded text will appear here."
               value={base}
-              rows={6}
-              readOnly
+              rows={16}
+              disabled readOnly
             ></textarea>
           </div>
         </div>

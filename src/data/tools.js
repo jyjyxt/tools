@@ -1,43 +1,43 @@
 const data = [
   {
-    title: 'Base64 Decode and Encode Online',
+    title: 'Base64 Decode to String or Bytes Online',
+    link: '/base64-decode',
+    short: '🔡 Base64 Decode',
+    desc: 'Free & Open Source base64 converter, Base64 Decode and Encode Online.',
+  },
+  {
+    title: 'Base64 Encode string Online',
     link: '/base64-encode',
-
     short: '🔡 Base64 Encode',
     desc: 'Free & Open Source base64 converter, Base64 Decode and Encode Online.',
   },
   {
     title: 'Converter Number to Binary, Octal, Decimal, Hexadecimal Online',
     link: '/integer',
-
     short: '🔢 integer',
     desc: 'Free & Open Source number converter, Converter Number to Binary, Octal, Decimal, Hexadecimal Online.',
   },
   {
     title: 'Unix Timestamp Converter Online',
     link: '/timestamp',
-
     short: '⏲️ Timestamp',
     desc: 'Free & Open Source epoch/Unix timestamp converter for computer programmers. Includes epoch explanation and conversion syntax in various programming languages.',
   },
   {
     title: 'Ethereum Batch Wallets Generate Online',
     link: '/bulk-eth-wallets',
-
     short: '🦍 ETH Batch Wallets',
     desc: 'Free & Open Source generate ETH and BSC wallets Online',
   },
   {
     title: 'Convert ETH Private Key To Public Key, or Address Online',
     link: '/eth-priv',
-
     short: '🪙 ETH Private Key',
     desc: 'Free & Open Source to Convert ETH Private Key To Public Key, or Address Online',
   },
   {
     title: 'UUID NIL, v1, v3, v4, and v5 Bulk Generator Online',
     link: '/uuid',
-
     short: '🔂 UUID Generator',
     desc: 'Free Online Generate random UUID for NIL, v1, v3, v4, and v5 Version',
   },
