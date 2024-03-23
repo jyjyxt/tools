@@ -107,7 +107,7 @@ const Page = ({title} : {title: string | undefined}) => {
           </div>
           <div className="mb-4">
             <textarea
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-6 focus:outline-none focus:shadow-outline"
+              className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               placeholder="Encoded text will appear here."
               value={base}
               rows={6}
