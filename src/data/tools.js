@@ -1,5 +1,17 @@
 const data = [
   {
+    title: 'Base58 Decode to String or Bytes Online',
+    link: '/base58-decode',
+    short: '🔡 Base58 Decode',
+    desc: 'Free & Open Source base58 converter, Base58 Decode and Encode Online.',
+  },
+  {
+    title: 'Base58 Encode string Online',
+    link: '/base58-encode',
+    short: '🔡 Base58 Encode',
+    desc: 'Free & Open Source base64 converter, Base58 Decode and Encode Online.',
+  },
+  {
     title: 'Base64 Decode to String or Bytes Online',
     link: '/base64-decode',
     short: '🔡 Base64 Decode',
