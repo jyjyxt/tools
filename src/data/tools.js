@@ -1,5 +1,12 @@
 const data = [
   {
+    title: 'Base64 Decode and Encode Online',
+    link: '/base64-encode',
+
+    short: '🔡 Base64 Encode',
+    desc: 'Free & Open Source base64 converter, Base64 Decode and Encode Online.',
+  },
+  {
     title: 'Converter Number to Binary, Octal, Decimal, Hexadecimal Online',
     link: '/integer',
 

@@ -4,7 +4,7 @@ import tools from "@/data/tools"
 import Client from "./client"
 
 const tool = tools.find((t) => {
-  return t.link === '/integer'
+  return t.link === '/base64-encode'
 })
 
 export const metadata: Metadata = {
