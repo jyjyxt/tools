@@ -1,5 +1,41 @@
 const data = [
   {
+    title: 'Base32 Crockford Decode to String or Bytes Online',
+    link: '/base32crockford-decode',
+    short: '🔡 Base32 Crockford Decode',
+    desc: 'Free & Open Source base32 Crockford converter, Base32 Crockford Decode and Encode Online.',
+  },
+  {
+    title: 'Base32 Crockford Encode string Online',
+    link: '/base32crockford-encode',
+    short: '🔡 Base32 Crockford Encode',
+    desc: 'Free & Open Source Base32 Crockford converter, Base32 Crockford Decode and Encode Online.',
+  },
+  {
+    title: 'Base32hex Decode to String or Bytes Online',
+    link: '/base32hex-decode',
+    short: '🔡 Base32hex Decode',
+    desc: 'Free & Open Source base32hex converter, Base32hex Decode and Encode Online.',
+  },
+  {
+    title: 'Base32hex Encode string Online',
+    link: '/base32hex-encode',
+    short: '🔡 Base32hex Encode',
+    desc: 'Free & Open Source base32hex converter, Base32hex Decode and Encode Online.',
+  },
+  {
+    title: 'Base32 Decode to String or Bytes Online',
+    link: '/base32-decode',
+    short: '🔡 Base32 Decode',
+    desc: 'Free & Open Source base32 converter, Base32 Decode and Encode Online.',
+  },
+  {
+    title: 'Base32 Encode string Online',
+    link: '/base32-encode',
+    short: '🔡 Base32 Encode',
+    desc: 'Free & Open Source base32 converter, Base32 Decode and Encode Online.',
+  },
+  {
     title: 'Base58 Decode to String or Bytes Online',
     link: '/base58-decode',
     short: '🔡 Base58 Decode',
