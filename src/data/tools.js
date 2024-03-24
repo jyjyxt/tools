@@ -2,13 +2,13 @@ const data = [
   {
     title: 'Base32 Crockford Decode to String or Bytes Online',
     link: '/base32crockford-decode',
-    short: '🔡 Base32 Crockford Decode',
+    short: '🔡 Base32Crockford Decode',
     desc: 'Free & Open Source base32 Crockford converter, Base32 Crockford Decode and Encode Online.',
   },
   {
     title: 'Base32 Crockford Encode string Online',
     link: '/base32crockford-encode',
-    short: '🔡 Base32 Crockford Encode',
+    short: '🔡 Base32Crockford Encode',
     desc: 'Free & Open Source Base32 Crockford converter, Base32 Crockford Decode and Encode Online.',
   },
   {
