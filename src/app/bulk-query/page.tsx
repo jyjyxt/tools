@@ -4,7 +4,7 @@ import tools from "@/data/tools"
 import Client from "./client"
 
 const tool = tools.find((t) => {
-  return t.link === '/base32-encode'
+  return t.link === '/bulk-query'
 })
 
 export const metadata: Metadata = {

@@ -1,5 +1,11 @@
 const data = [
   {
+    title: 'Ethereum bulk query balance Online',
+    link: '/bulk-query',
+    short: '🔡 Bulk Query',
+    desc: 'Free & Open Source bulk query balance for eth addresses',
+  },
+  {
     title: 'Base32 Crockford Decode to String or Bytes Online',
     link: '/base32crockford-decode',
     short: '🔡 Base32Crockford Decode',

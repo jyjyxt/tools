@@ -41,25 +41,23 @@ const Page = ({title} : {title: string | undefined}) => {
       const contract = new web3.eth.Contract(abi, erc);
       const sym = await contract.methods.symbol().call();
       const dec = await contract.methods.decimals().call();
-      const b = await contract.methods.balanceOf('0x9696f59E4d72E237BE84fFD425DCaD154Bf96976').call();
-      console.log(sym)
-      console.log(dec)
-      console.log(b, typeof b)
-      return
 
       for (let i = 0; i < data.length; i++) {
         const o = data[i]
+        console.log("xxx", web3.utils.isAddress(o))
         if (web3.utils.isAddress(o)) {
-         // const b = await contract.methods.balanceOf(o).call();
-         // let bb = '0'
-         // if (b > 0) {
-         //   const ve = web3.utils.fromWei(b, 'ether')
-         //   bb = Number(ve).toFixed(3);
-         // }
-         // array.push(o + ', ' + bb + sym)
+          const bo = await contract.methods.balanceOf(o).call();
+          let bn = Number(bo)
+          let bb = '0'
+          if (bn > 0) {
+            const ve = bn / 10 ** Number(dec)
+            bb = Number(ve).toFixed(3);
+          }
+          array.push(o + ', ' + bb + sym)
+
+          setResult(array.join('\n'))
         }
       }
-      return
     } else {
       for (let i = 0; i < data.length; i++) {
         const o = data[i]
@@ -71,11 +69,11 @@ const Page = ({title} : {title: string | undefined}) => {
             bb = Number(ve).toFixed(3);
           }
           array.push(o + ', ' + bb + 'ETH')
+
+          setResult(array.join('\n'))
         }
       }
     }
-
-    setResult(array.join('\n'))
   }
 
   const notify = (str: string) => toast(`Copied ${str}!`);
@@ -116,7 +114,7 @@ const Page = ({title} : {title: string | undefined}) => {
               <input id="npm-install-copy-text" type="text" className="col-span-6 bg-gray-50 border-[1.5px] border-stroke text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-form-input dark:border-form-strokedark dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value={erc} placeholder="For eth leave blank or other token contract address"
                 onChange={(e) => setERC(e.target.value)}
               />
-              <button data-copy-to-clipboard-target="npm-install-copy-text" className="absolute end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-white/30 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-primary border" onClick={() => handleCopy("")}>
+              <button data-copy-to-clipboard-target="npm-install-copy-text" className="absolute end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-white/30 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-primary border" onClick={() => handleCopy(erc)}>
                 <span id="default-message" className="inline-flex items-center">
                   <span className="text-xs font-semibold">Copy</span>
                 </span>
@@ -145,14 +143,14 @@ const Page = ({title} : {title: string | undefined}) => {
               </button>
               <button
                 className="rounded bg-primary py-2 px-10 font-medium text-gray hover:bg-opacity-90"
-                onClick={() => {handleCopy('')}}
+                onClick={() => {handleCopy(result)}}
               >
                 Copy
               </button>
             </div>
             <button
               className="rounded bg-primary py-2 px-10 font-medium text-gray hover:bg-opacity-90"
-              onClick={() => setAddress('')}
+              onClick={() => setOriginal('')}
             >
               Clear 
             </button>
