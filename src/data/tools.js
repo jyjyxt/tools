@@ -2,7 +2,7 @@ const data = [
   {
     title: 'Ethereum bulk query balance Online',
     link: '/bulk-query',
-    short: '🔡 Bulk Query',
+    short: '👽 Bulk Query',
     desc: 'Free & Open Source bulk query balance for eth addresses',
   },
   {
