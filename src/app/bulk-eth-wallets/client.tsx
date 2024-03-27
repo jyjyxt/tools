@@ -30,7 +30,7 @@ const Page = ({title} : {title: string | undefined}) => {
       const p2 = secp256k1.getPublicKey(priv, false);
       const hash = keccak256(p2.slice(1));
       const address = `${toHex(hash.slice(-20))}`;
-      rs.push(`0x${address},${priv},${mnemonic}`)
+      rs.push(`0x${address}, ${priv}, ${mnemonic}`)
     }
     setResult(rs.join('\n'));
   }, [words, sl]) 
