@@ -1,6 +1,6 @@
 const data = [
   {
-    title: 'Ethereum bulk query balance Online',
+    title: 'Ethereum bulk query eth & erc20 token balance Online',
     link: '/bulk-query',
     short: '👽 Bulk Query',
     desc: 'Free & Open Source bulk query balance for eth addresses',
